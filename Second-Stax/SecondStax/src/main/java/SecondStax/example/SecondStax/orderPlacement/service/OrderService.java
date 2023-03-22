@@ -67,7 +67,8 @@ public class OrderService {
             orderRepository.save(updateOrder);
 
             //decrement the provider's total amount
-            int providerRemainingAmount = updateOrder.getFxProduct().getAmount() - updateOrder.getAmount();
+            double tradedAmount = updateOrder.getAmount()*updateOrder.getFxProduct().getPrice();
+            int providerRemainingAmount = updateOrder.getFxProduct().getAmount() - (int) tradedAmount;
             updateOrder.getFxProduct().setAmount(providerRemainingAmount);
             fxProductRepository.save(updateOrder.getFxProduct());
 
@@ -78,7 +79,6 @@ public class OrderService {
             this.cancelOrder(orderId);
             return "The selected provider has no more currencies to sell";
         }
-
     }
 
 }
