@@ -13,8 +13,7 @@ import java.util.List;
 @RequestMapping("/api/v1/providers")
 public class FxOrderingServiceController {
 
-    @Autowired
-    ProviderService providerService;
+    @Autowired ProviderService providerService;
     @GetMapping(value = {"", "/"})
     public void getAllProviders(){
         List<Provider> allProviders= providerService.getProviders();

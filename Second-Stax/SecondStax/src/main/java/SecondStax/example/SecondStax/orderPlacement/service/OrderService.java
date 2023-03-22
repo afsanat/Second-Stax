@@ -10,8 +10,12 @@ import SecondStax.example.SecondStax.orderPlacement.model.OrderStatus;
 import SecondStax.example.SecondStax.orderPlacement.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class OrderService {
@@ -35,6 +39,46 @@ public class OrderService {
                 .status(OrderStatus.PENDING).build();
         orderRepository.save(order);
         return "Order saved";
+    }
+
+    public String cancelOrder(UUID orderId){
+        Optional<Order> order = orderRepository.findById(orderId);
+
+        if(order.isEmpty()){
+            throw new NoSuchElementException("Order no longer exists");
+        }
+
+        Order updateOrder = order.get();
+        updateOrder.setStatus(OrderStatus.REJECTED);
+        orderRepository.save(updateOrder);
+        return "order cancelled";
+    }
+
+    public String approveOrder(UUID orderId){
+        Optional<Order> order = orderRepository.findById(orderId);
+
+        if(order.isEmpty()){
+            throw new NoSuchElementException("Order no longer exists");
+        }
+        Order updateOrder = order.get();
+
+        if (updateOrder.getFxProduct().getAmount() != 0){
+            updateOrder.setStatus(OrderStatus.ACCEPTED);
+            orderRepository.save(updateOrder);
+
+            //decrement the provider's total amount
+            int providerRemainingAmount = updateOrder.getFxProduct().getAmount() - updateOrder.getAmount();
+            updateOrder.getFxProduct().setAmount(providerRemainingAmount);
+            fxProductRepository.save(updateOrder.getFxProduct());
+
+            return "order accepted";
+        }
+
+        else{
+            this.cancelOrder(orderId);
+            return "The selected provider has no more currencies to sell";
+        }
+
     }
 
 }
