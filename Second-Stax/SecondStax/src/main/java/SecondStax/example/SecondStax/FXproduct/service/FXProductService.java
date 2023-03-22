@@ -1,7 +1,7 @@
-package SecondStax.example.SecondStax.service;
+package SecondStax.example.SecondStax.FXproduct.service;
 
-import SecondStax.example.SecondStax.model.FXProduct;
-import SecondStax.example.SecondStax.repository.FXProductRepository;
+import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
+import SecondStax.example.SecondStax.FXproduct.repository.FXProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

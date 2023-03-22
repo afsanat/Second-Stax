@@ -1,4 +1,4 @@
-package SecondStax.example.SecondStax.model;
+package SecondStax.example.SecondStax.Providers.model;
 
 import lombok.*;
 import org.hibernate.annotations.UpdateTimestamp;

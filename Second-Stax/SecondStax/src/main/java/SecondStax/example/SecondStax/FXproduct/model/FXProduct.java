@@ -1,5 +1,6 @@
-package SecondStax.example.SecondStax.model;
+package SecondStax.example.SecondStax.FXproduct.model;
 
+import SecondStax.example.SecondStax.Providers.model.Provider;
 import lombok.*;
 
 import javax.persistence.*;

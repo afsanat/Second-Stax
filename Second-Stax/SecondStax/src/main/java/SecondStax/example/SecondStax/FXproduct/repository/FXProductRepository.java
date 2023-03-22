@@ -1,6 +1,6 @@
-package SecondStax.example.SecondStax.repository;
+package SecondStax.example.SecondStax.FXproduct.repository;
 
-import SecondStax.example.SecondStax.model.FXProduct;
+import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

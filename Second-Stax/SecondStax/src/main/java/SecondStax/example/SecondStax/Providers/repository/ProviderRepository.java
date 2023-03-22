@@ -1,6 +1,6 @@
-package SecondStax.example.SecondStax.repository;
+package SecondStax.example.SecondStax.Providers.repository;
 
-import SecondStax.example.SecondStax.model.Provider;
+import SecondStax.example.SecondStax.Providers.model.Provider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
