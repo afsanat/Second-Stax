@@ -21,9 +21,11 @@ public class FXProduct {
     @NonNull
     private String currency;
 
+    @Column(name = "price")
+    private double price;
+
     @Column(name = "amount")
-    @NonNull
-    private double amount;
+    private int amount;
 
     @ManyToOne
     @JoinColumn(name="provider_id")
