@@ -1,18 +1,16 @@
-package SecondStax.example.SecondStax.orderPlacement.service;
+package SecondStax.example.SecondStax.orders.service;
 
 import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
 import SecondStax.example.SecondStax.FXproduct.repository.FXProductRepository;
 import SecondStax.example.SecondStax.Traders.model.Trader;
 import SecondStax.example.SecondStax.Traders.repository.TraderRepository;
-import SecondStax.example.SecondStax.orderPlacement.dto.OrderPayLoad;
-import SecondStax.example.SecondStax.orderPlacement.model.Order;
-import SecondStax.example.SecondStax.orderPlacement.model.OrderStatus;
-import SecondStax.example.SecondStax.orderPlacement.repository.OrderRepository;
+import SecondStax.example.SecondStax.orders.dto.OrderPayLoad;
+import SecondStax.example.SecondStax.orders.model.Order;
+import SecondStax.example.SecondStax.orders.model.OrderStatus;
+import SecondStax.example.SecondStax.orders.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;

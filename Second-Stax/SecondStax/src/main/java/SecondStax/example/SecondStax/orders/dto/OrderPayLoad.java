@@ -1,4 +1,4 @@
-package SecondStax.example.SecondStax.orderPlacement.dto;
+package SecondStax.example.SecondStax.orders.dto;
 
 import lombok.*;
 

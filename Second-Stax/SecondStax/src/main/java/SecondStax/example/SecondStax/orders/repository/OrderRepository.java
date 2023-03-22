@@ -1,6 +1,6 @@
-package SecondStax.example.SecondStax.orderPlacement.repository;
+package SecondStax.example.SecondStax.orders.repository;
 
-import SecondStax.example.SecondStax.orderPlacement.model.Order;
+import SecondStax.example.SecondStax.orders.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

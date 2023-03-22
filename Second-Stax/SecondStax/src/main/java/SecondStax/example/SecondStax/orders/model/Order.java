@@ -1,4 +1,4 @@
-package SecondStax.example.SecondStax.orderPlacement.model;
+package SecondStax.example.SecondStax.orders.model;
 
 import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
 import SecondStax.example.SecondStax.Traders.model.Trader;

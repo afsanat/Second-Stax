@@ -1,7 +1,7 @@
-package SecondStax.example.SecondStax.orderPlacement.controller;
+package SecondStax.example.SecondStax.orders.controller;
 
-import SecondStax.example.SecondStax.orderPlacement.dto.OrderPayLoad;
-import SecondStax.example.SecondStax.orderPlacement.service.OrderService;
+import SecondStax.example.SecondStax.orders.dto.OrderPayLoad;
+import SecondStax.example.SecondStax.orders.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

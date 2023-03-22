@@ -1,4 +1,4 @@
-package SecondStax.example.SecondStax.orderPlacement.model;
+package SecondStax.example.SecondStax.orders.model;
 
 public enum OrderStatus {
     PENDING,
