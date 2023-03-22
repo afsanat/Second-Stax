@@ -12,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="orders")
+@Builder
 
 public class Order {
     @Id
@@ -23,7 +24,7 @@ public class Order {
     private OrderStatus status;
 
     @Column(name = "payment")
-    private PaymentOption payment;
+    private String payment;
 
     @ManyToOne
     @JoinColumn(name="product_id")
