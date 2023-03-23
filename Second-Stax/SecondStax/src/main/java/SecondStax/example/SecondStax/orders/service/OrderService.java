@@ -70,11 +70,15 @@ public class OrderService {
             updateOrder.setStatus(OrderStatus.ACCEPTED);
             orderRepository.save(updateOrder);
 
+
             //decrement the provider's total amount
             double tradedAmount = updateOrder.getAmount()*updateOrder.getFxProduct().getPrice();
             int providerRemainingAmount = updateOrder.getFxProduct().getAmount() - (int) tradedAmount;
             updateOrder.getFxProduct().setAmount(providerRemainingAmount);
             fxProductRepository.save(updateOrder.getFxProduct());
+
+            updateOrder.getPayment().setAccountAmount((int) tradedAmount + updateOrder.getPayment().getAccountAmount());
+            paymentRepo.save(updateOrder.getPayment());
 
             return "order accepted";
         }

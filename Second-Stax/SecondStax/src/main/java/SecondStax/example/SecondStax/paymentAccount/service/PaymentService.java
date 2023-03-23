@@ -35,7 +35,7 @@ public class PaymentService {
         }
 
         PaymentAccount paymentAccount = PaymentAccount.builder().account(paymentAccountDto.getAccount())
-                        .bankname(paymentAccountDto.getBankname()).trader(trader.get()).build();
+                        .bankname(paymentAccountDto.getBankname()).trader(trader.get()).accountAmount(0).build();
         paymentRepo.save(paymentAccount);
         return "payment account added";
     }

@@ -2,10 +2,7 @@ package SecondStax.example.SecondStax.paymentAccount.model;
 
 import SecondStax.example.SecondStax.orders.model.OrderStatus;
 import SecondStax.example.SecondStax.traders.model.Trader;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -14,6 +11,8 @@ import java.util.UUID;
 @Entity(name="bank")
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 @Table(name="bank")
 @Builder
 public class PaymentAccount {
@@ -25,6 +24,9 @@ public class PaymentAccount {
 
     @Column(name = "bankname")
     private String bankname;
+
+    @Column(name = "accountAmount")
+    private int accountAmount;
 
     @ManyToOne
     @JoinColumn(name="trader_id")
