@@ -1,7 +1,7 @@
 package SecondStax.example.SecondStax.orders.model;
 
 import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
-import SecondStax.example.SecondStax.Traders.model.Trader;
+import SecondStax.example.SecondStax.traders.model.Trader;
 import lombok.*;
 
 import javax.persistence.*;

@@ -2,11 +2,11 @@ package SecondStax.example.SecondStax.orders.service;
 
 import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
 import SecondStax.example.SecondStax.FXproduct.repository.FXProductRepository;
-import SecondStax.example.SecondStax.Traders.model.Trader;
 import SecondStax.example.SecondStax.orders.dto.OrderPayLoad;
 import SecondStax.example.SecondStax.orders.model.Order;
 import SecondStax.example.SecondStax.orders.model.OrderStatus;
 import SecondStax.example.SecondStax.orders.repository.OrderRepository;
+import SecondStax.example.SecondStax.traders.model.Trader;
 import SecondStax.example.SecondStax.traders.repository.TraderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package SecondStax.example.SecondStax.Traders.model;
+package SecondStax.example.SecondStax.traders.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

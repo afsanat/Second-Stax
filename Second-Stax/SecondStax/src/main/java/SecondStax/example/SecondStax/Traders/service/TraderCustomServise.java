@@ -1,8 +1,8 @@
 package SecondStax.example.SecondStax.traders.service;
 
+import SecondStax.example.SecondStax.traders.model.Trader;
 import SecondStax.example.SecondStax.traders.repository.TraderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import SecondStax.example.SecondStax.Traders.model.Trader;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
