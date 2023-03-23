@@ -1,6 +1,7 @@
 package SecondStax.example.SecondStax.orders.model;
 
 import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
+import SecondStax.example.SecondStax.paymentAccount.model.PaymentAccount;
 import SecondStax.example.SecondStax.traders.model.Trader;
 import lombok.*;
 
@@ -23,8 +24,9 @@ public class Order {
     @Column(name = "status")
     private OrderStatus status;
 
-    @Column(name = "payment")
-    private String payment;
+    @ManyToOne
+    @JoinColumn(name="payment_id")
+    private PaymentAccount payment;
 
     @ManyToOne
     @JoinColumn(name="product_id")

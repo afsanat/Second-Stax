@@ -6,6 +6,8 @@ import SecondStax.example.SecondStax.orders.dto.OrderPayLoad;
 import SecondStax.example.SecondStax.orders.model.Order;
 import SecondStax.example.SecondStax.orders.model.OrderStatus;
 import SecondStax.example.SecondStax.orders.repository.OrderRepository;
+import SecondStax.example.SecondStax.paymentAccount.model.PaymentAccount;
+import SecondStax.example.SecondStax.paymentAccount.repository.PaymentRepo;
 import SecondStax.example.SecondStax.traders.model.Trader;
 import SecondStax.example.SecondStax.traders.repository.TraderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +22,13 @@ public class OrderService {
     @Autowired private OrderRepository orderRepository;
     @Autowired private FXProductRepository fxProductRepository;
     @Autowired private TraderRepository traderRepository;
+    @Autowired
+    private PaymentRepo paymentRepo;
+
     public String saveOrder(OrderPayLoad orderPayLoad){
         Optional<FXProduct> fxProduct = fxProductRepository.findById(orderPayLoad.getFxProduct());
         Optional<Trader> trader = traderRepository.findById(orderPayLoad.getTrader());
+        Optional<PaymentAccount> payment = paymentRepo.findById(orderPayLoad.getPayment());
 
         if(fxProduct.isEmpty()){
             throw new NoSuchElementException("This product is no longer available");
@@ -33,7 +39,7 @@ public class OrderService {
         }
 
         Order order = Order.builder().amount(orderPayLoad.getAmount()).fxProduct(fxProduct.get())
-                .trader(trader.get()).payment(orderPayLoad.getPayment())
+                .trader(trader.get()).payment(payment.get())
                 .status(OrderStatus.PENDING).build();
         orderRepository.save(order);
         return "Order saved";

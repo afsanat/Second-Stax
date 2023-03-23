@@ -40,7 +40,8 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeHttpRequests().antMatchers("/api/v1/auth/**").permitAll()
+        http.csrf().disable().authorizeHttpRequests().antMatchers("/api/v1/auth/**")
+                .permitAll()
                 .anyRequest().authenticated().and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtTokenAuthentication, UsernamePasswordAuthenticationFilter.class);;

@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class OrderPayLoad {
     private int amount;
-    private String payment;
+    private UUID payment;
     private UUID fxProduct;
     private UUID trader;
 }

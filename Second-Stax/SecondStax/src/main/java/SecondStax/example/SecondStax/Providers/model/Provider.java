@@ -24,4 +24,9 @@ public class Provider {
     @Column(name = "LastName")
     @NonNull
     private String LastName;
+
+    @Column(name = "email")
+    private String email;
+    @Column(name = "password")
+    private String password;
 }
