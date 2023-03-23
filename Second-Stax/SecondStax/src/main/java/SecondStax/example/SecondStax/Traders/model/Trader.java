@@ -21,4 +21,9 @@ public class Trader {
     @Column(name = "lname")
     private String lname;
 
+    @Column(name = "email")
+    private String email;
+    @Column(name = "password")
+    private String password;
+
 }
