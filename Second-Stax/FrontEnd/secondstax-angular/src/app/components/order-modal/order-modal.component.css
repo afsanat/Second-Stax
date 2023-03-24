@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    padding: 15rem;
+ }
+ .btns{
+    background-color: #3f51b5;
+    color:white;
+    border-radius: 5px;
+    padding:1%;
+    margin-left: 80%;
+ } 

@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>FX Purchase</h1>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field appearance="fill">
+      <mat-label>amount</mat-label>
+      <input matInput  placeholder="amount">
+    </mat-form-field>
+
+    <mat-form-field  appearance="fill">
+      <mat-label>payment method</mat-label>
+      <input placeholder="Ecobank" required>
+    </mat-form-field>
+    </mat-dialog-content>
+  
+      <mat-dialog-actions align="end">
+        <button style="color:white; background-color:green" (click) = "Purchase()" mat-dialog-close >purchase</button>
+        <button style="color:white; background-color: brown;" mat-button [mat-dialog-close]="true" cdkFocusInitial>cancel</button>
+      </mat-dialog-actions> 
+
+
+  <!-- <h2 mat-dialog-title>Add Comment</h2>
+<mat-dialog-content class="mat-typography">
+    <mat-form-field form appearance="fill">
+      <mat-label>comment</mat-label>
+      <textarea formControlName="comment" matInput></textarea>
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button style="color:white; background-color:green"   mat-dialog-close>save</button>
+  <button style="color:white; background-color: brown;" mat-button [mat-dialog-close]="true" cdkFocusInitial>cancel</button>
+</mat-dialog-actions> -->

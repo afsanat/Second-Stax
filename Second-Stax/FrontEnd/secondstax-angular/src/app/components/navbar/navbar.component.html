@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" style="background-color:rgb(28, 28, 55);color: white;">
+    <span class="fill-remaining-space">
+      <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <span (mouseleave)="menuTrigger.closeMenu()">
+        <button mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span  mat-button routerLink="purchases">Purchases</span>
+    </button>
+    <button mat-menu-item>
+          <mat-icon>people_outline</mat-icon>
+          <span mat-button routerLink="/providers">Providers</span>
+        </button>
+    <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span mat-button routerLink="/">Logout</span>
+        </button>
+    </span>
+    </mat-menu>
+    </span>
+    <span class="fill-remaining-space">Second Stax FX</span>
+    <h4>user.name@gmail.com</h4>
+
+  </mat-toolbar>
