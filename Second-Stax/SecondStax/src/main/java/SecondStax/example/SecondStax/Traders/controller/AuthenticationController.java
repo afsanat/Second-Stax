@@ -46,6 +46,11 @@ public class AuthenticationController {
         }
     }
 
+    @GetMapping("/loggedID/{email}")
+    public Trader getIDBYEmail(@PathVariable("email") String email){
+        return traderRepository.findByEmail(email);
+    }
+
     @PostMapping("/logout")
     public String logoutUser() {
         jwtUtil.getCleanJwtCookie();

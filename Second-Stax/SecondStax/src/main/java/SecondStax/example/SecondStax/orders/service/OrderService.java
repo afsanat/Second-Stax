@@ -67,7 +67,7 @@ public class OrderService {
         }
         Order updateOrder = order.get();
 
-        if (updateOrder.getFxProduct().getAmount() != 0){
+        if (updateOrder.getFxProduct().getAmount() > 0){
             updateOrder.setStatus(OrderStatus.ACCEPTED);
             orderRepository.save(updateOrder);
 
