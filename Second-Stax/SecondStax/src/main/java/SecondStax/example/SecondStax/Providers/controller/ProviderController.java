@@ -13,7 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/providers")
-public class FxOrderingServiceController {
+@CrossOrigin("http://localhost:4200/")
+public class ProviderController {
     @Autowired
     JwtUtil jwtUtil;
 
@@ -22,9 +23,9 @@ public class FxOrderingServiceController {
 
     @Autowired ProviderService providerService;
     @GetMapping(value = {"", "/"})
-    public void getAllProviders(){
+    public List<Provider> getAllProviders(){
         List<Provider> allProviders= providerService.getProviders();
-        System.out.println(allProviders);
+        return allProviders;
     }
 
     @PostMapping("/ProviderLogin")

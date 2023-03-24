@@ -13,6 +13,7 @@ import SecondStax.example.SecondStax.traders.repository.TraderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
@@ -87,6 +88,10 @@ public class OrderService {
             this.cancelOrder(orderId);
             return "The selected provider has no more currencies to sell";
         }
+    }
+
+    public List<Order> getOrderByTrader(UUID traderId){
+        return orderRepository.findByTrader(traderId);
     }
 
 }

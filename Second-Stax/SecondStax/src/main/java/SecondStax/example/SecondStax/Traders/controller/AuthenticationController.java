@@ -13,6 +13,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/auth")
+@CrossOrigin("http://localhost:4200/")
 public class AuthenticationController {
     @Autowired
     JwtUtil jwtUtil;

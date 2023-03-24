@@ -1,14 +1,18 @@
 package SecondStax.example.SecondStax.orders.controller;
 
+import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
 import SecondStax.example.SecondStax.orders.dto.OrderPayLoad;
+import SecondStax.example.SecondStax.orders.model.Order;
 import SecondStax.example.SecondStax.orders.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/orders")
+@CrossOrigin("http://localhost:4200/")
 public class OrderController {
     @Autowired
     OrderService orderService;
@@ -43,5 +47,10 @@ public class OrderController {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    @GetMapping(value = {"/traderPurchase/{traderID}"})
+    public List<Order> getTarderPurchase(@PathVariable("traderID") UUID traderID){
+        return orderService.getOrderByTrader(traderID);
     }
 }
