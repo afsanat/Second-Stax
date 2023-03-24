@@ -53,4 +53,9 @@ public class OrderController {
     public List<Order> getTarderPurchase(@PathVariable("traderID") UUID traderID){
         return orderService.getOrderByTrader(traderID);
     }
+
+    @GetMapping(value = {"/ProviderSells/{providerID}"})
+    public List<Order> getProviderSells(@PathVariable("providerID") UUID providerID){
+        return orderService.getOrderByProvider(providerID);
+    }
 }

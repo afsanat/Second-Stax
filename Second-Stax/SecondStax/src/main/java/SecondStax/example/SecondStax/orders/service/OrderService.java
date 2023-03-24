@@ -94,4 +94,8 @@ public class OrderService {
         return orderRepository.findByTrader(traderId);
     }
 
+    public List<Order> getOrderByProvider(UUID provider){
+        return orderRepository.findByProvider(provider);
+    }
+
 }
