@@ -22,6 +22,8 @@ import { OrderModalComponent } from './components/order-modal/order-modal.compon
 import { FormsModule } from '@angular/forms';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -32,7 +34,7 @@ import { AdminComponent } from './components/admin/admin.component';
     ProviderDetailsComponent,
     OrderModalComponent,
     PurchaseComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,9 @@ import { AdminComponent } from './components/admin/admin.component';
     MatMenuModule,
     MatCardModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

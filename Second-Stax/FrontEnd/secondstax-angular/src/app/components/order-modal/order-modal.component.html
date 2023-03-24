@@ -2,30 +2,20 @@
 <mat-dialog-content class="mat-typography">
   <mat-form-field appearance="fill">
       <mat-label>amount</mat-label>
-      <input matInput  placeholder="amount">
-    </mat-form-field>
+      <input matInput  placeholder="EX. 239">
+    </mat-form-field><br>
 
     <mat-form-field  appearance="fill">
-      <mat-label>payment method</mat-label>
-      <input placeholder="Ecobank" required>
-    </mat-form-field>
+    <mat-select placeholder="Payment Option">
+      <mat-option *ngFor="let bank of banks" [value]="bank.value">
+        {{bank.viewValue}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
     </mat-dialog-content>
   
       <mat-dialog-actions align="end">
-        <button style="color:white; background-color:green" (click) = "Purchase()" mat-dialog-close >purchase</button>
-        <button style="color:white; background-color: brown;" mat-button [mat-dialog-close]="true" cdkFocusInitial>cancel</button>
+        <button style="font-size: large; color:white; background-color:green" (click) = "Purchase()" mat-dialog-close >purchase</button>
+        <button style="font-size: large;color:white; background-color: brown;" mat-button [mat-dialog-close]="true" cdkFocusInitial>cancel</button>
       </mat-dialog-actions> 
-
-
-  <!-- <h2 mat-dialog-title>Add Comment</h2>
-<mat-dialog-content class="mat-typography">
-    <mat-form-field form appearance="fill">
-      <mat-label>comment</mat-label>
-      <textarea formControlName="comment" matInput></textarea>
-    </mat-form-field>
-</mat-dialog-content>
-
-<mat-dialog-actions align="end">
-  <button style="color:white; background-color:green"   mat-dialog-close>save</button>
-  <button style="color:white; background-color: brown;" mat-button [mat-dialog-close]="true" cdkFocusInitial>cancel</button>
-</mat-dialog-actions> -->

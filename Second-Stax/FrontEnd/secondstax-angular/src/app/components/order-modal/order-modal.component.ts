@@ -25,7 +25,7 @@ export class OrderModalComponent {
     this.payload={
       "amount": 340,
       "payment": "140569a6-5180-4c8a-a101-7b14c53541d7",
-      "fxProduct": "123e4567-e89b-12d3-a456-426614174039",
+      "fxProduct": "123e4567-e89b-12d3-a456-426614174029",
       "trader": "123e4567-e89b-12d3-a456-426614173119"
   }
 
@@ -39,9 +39,12 @@ export class OrderModalComponent {
         console.error('There was an error creating order!', error);
     }
   });
-
-  
-
   }
+
+  banks: any= [
+    {value: 'BK', viewValue: 'JE'},
+    {value: 'ECOBANK', viewValue: 'KSD'},
+    {value: 'SER', viewValue: 'JT'}
+  ];
 }
 
