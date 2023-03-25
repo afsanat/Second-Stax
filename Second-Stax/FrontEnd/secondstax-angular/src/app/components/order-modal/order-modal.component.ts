@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProviderDetailServiceService } from 'src/app/services/provider-detail-service.service';
@@ -9,8 +9,9 @@ import { ProviderDetailsComponent } from '../provider-details/provider-details.c
   templateUrl: './order-modal.component.html',
   styleUrls: ['./order-modal.component.css']
 })
-export class OrderModalComponent {
+export class OrderModalComponent implements OnInit{
   infoModal:any;
+  banks:any;
   payload:any
   providers = new FormGroup({
     provider: new FormControl('')
@@ -20,19 +21,36 @@ export class OrderModalComponent {
     this.infoModal = datas
   }
 
-  Purchase() {
-    console.log( this.infoModal)
+  ngOnInit(): void {
+    console.log("opening modal");
+    this.getPayment();
+  }
+
+  Purchase(f:any) {
     this.payload={
-      "amount": 340,
-      "payment": "140569a6-5180-4c8a-a101-7b14c53541d7",
-      "fxProduct": "123e4567-e89b-12d3-a456-426614174029",
-      "trader": "123e4567-e89b-12d3-a456-426614173119"
+      "amount": f.value.amount,
+      "payment": f.value.payment,
+      "fxProduct": this.infoModal.dataId,
+      "trader":  localStorage.getItem("LoggedUserID")
   }
 
     this.service.makeOrder(this.payload).subscribe({
       next: data => {
         console.log('order created!');
         console.log(data);
+    },
+    error: error => {
+        console.error('There was an error creating order!', error);
+    }
+  });
+  }
+
+  getPayment(){
+    this.service.getPayments(localStorage.getItem("LoggedUserID")).subscribe({
+      next: data => {
+        this.banks = JSON.parse(data);
+        console.log('retrieved payments');
+        console.log(this.banks);
 
     },
     error: error => {
@@ -41,10 +59,12 @@ export class OrderModalComponent {
   });
   }
 
-  banks: any= [
-    {value: 'BK', viewValue: 'JE'},
-    {value: 'ECOBANK', viewValue: 'KSD'},
-    {value: 'SER', viewValue: 'JT'}
-  ];
+
+
+  // banks: any= [
+  //   {value: 'BK', viewValue: 'JE'},
+  //   {value: 'ECOBANK', viewValue: 'KSD'},
+  //   {value: 'SER', viewValue: 'JT'}
+  // ];
 }
 

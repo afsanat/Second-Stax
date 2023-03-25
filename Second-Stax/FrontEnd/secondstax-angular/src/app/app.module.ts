@@ -24,6 +24,8 @@ import { PurchaseComponent } from './components/purchase/purchase.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { MatOptionModule } from '@angular/material/core';
     OrderModalComponent,
     PurchaseComponent,
     AdminComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

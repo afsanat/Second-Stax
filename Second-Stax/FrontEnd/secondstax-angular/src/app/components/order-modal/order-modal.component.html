@@ -1,14 +1,17 @@
+
+<form #f="ngForm" (ngSubmit)="Purchase(f)" novalidate>
 <h1 mat-dialog-title>FX Purchase</h1>
 <mat-dialog-content class="mat-typography">
   <mat-form-field appearance="fill">
       <mat-label>amount</mat-label>
-      <input matInput  placeholder="EX. 239">
+      <input matInput name="amount" placeholder="EX. 239" ngModel>
+
     </mat-form-field><br>
 
     <mat-form-field  appearance="fill">
-    <mat-select placeholder="Payment Option">
-      <mat-option *ngFor="let bank of banks" [value]="bank.value">
-        {{bank.viewValue}}
+    <mat-select  name="payment" placeholder="Payment Option" ngModel>
+      <mat-option *ngFor="let bank of banks" [value]="bank.paymentId">
+        {{bank.bankname}}({{bank.account}})
       </mat-option>
     </mat-select>
 
@@ -16,6 +19,8 @@
     </mat-dialog-content>
   
       <mat-dialog-actions align="end">
-        <button style="font-size: large; color:white; background-color:green" (click) = "Purchase()" mat-dialog-close >purchase</button>
+        <input type="submit" value="purchase" style="font-size: large; color:white; background-color:green" mat-dialog-close>
         <button style="font-size: large;color:white; background-color: brown;" mat-button [mat-dialog-close]="true" cdkFocusInitial>cancel</button>
       </mat-dialog-actions> 
+
+    </form>

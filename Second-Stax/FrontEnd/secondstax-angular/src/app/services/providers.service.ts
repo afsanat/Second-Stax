@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,9 @@ export class ProvidersService {
   
 
   getProviders():Observable<any>{
-    return this.http.get<any>('http://localhost:8080/api/v1/providers');
+    let tokenStr = 'Bearer ' + localStorage.getItem("Authorization");
+    const headers = new HttpHeaders().set('Authorization', tokenStr);
+    return this.http.get<any>('http://localhost:8080/api/v1/providers',{headers, responseType: 'text' as 'json' });
   }
 
 }

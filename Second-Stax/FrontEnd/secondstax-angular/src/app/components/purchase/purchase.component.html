@@ -1,3 +1,6 @@
+<app-navbar></app-navbar>
+<br><br>
+
 <div class="main-div">
 
     <div class="mat-elevation-z8">
@@ -5,7 +8,7 @@
       <div style="box-shadow: rgba(99, 99, 99, 0.2) 2px 2px 2px 2px;" class="container">
           <div class="container" >
             <div class="card-custom">
-                <h2 class="card-title text-success">Purchases</h2>
+                <h1 style ="font-weight:bolder; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(22, 143, 186);" class="card-title text-success">Purchases</h1>
               </div>
            
             </div>
@@ -58,9 +61,8 @@
 
           <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-            <mat-icon style="color: rgb(91, 91, 184);">launch</mat-icon>        
-
+             <td mat-cell *matCellDef="let element">  {{element.status}} </td>
+                  
           </ng-container>
         
           

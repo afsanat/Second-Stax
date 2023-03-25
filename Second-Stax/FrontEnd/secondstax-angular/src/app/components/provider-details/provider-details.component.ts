@@ -26,7 +26,7 @@ export class ProviderDetailsComponent implements OnInit{
 
     this.detailsService.getProviderDetails(this.providerid).subscribe({
       next: data => {
-        this.ELEMENT_DATA = data;
+        this.ELEMENT_DATA = JSON.parse(data);
         console.log('details:');
         console.log(this.ELEMENT_DATA);
 
@@ -45,15 +45,15 @@ export class ProviderDetailsComponent implements OnInit{
   console.log("started");
 }
 
-openDialog() {
+openDialog(productId:any) {
   const dialogRef = this.dialog.open(OrderModalComponent, {
     data: {
-      dataId: this.providerid} }); 
+      dataId: productId} }); 
   
   dialogRef.afterClosed().subscribe((shouldReload) => {
     console.log(`Dialog result: ${shouldReload}`);
     this.getProvidersDetails();
-     window.location.reload()
+     //window.location.reload()
   });
 }
 

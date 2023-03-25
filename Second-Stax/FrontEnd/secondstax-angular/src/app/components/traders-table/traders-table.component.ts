@@ -21,9 +21,9 @@ export class TradersTableComponent implements OnInit{
   getAllProviders(){
     this.userService.getProviders().subscribe({
       next: data => {
-        this.ELEMENT_DATA = data;
+        this.ELEMENT_DATA = JSON.parse(data);
         console.log('providers:');
-        console.log(this.ELEMENT_DATA);
+        console.log(this.ELEMENT_DATA.lastName);
 
         this.dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);
         this.dataSource.paginator = this.paginator;

@@ -19,9 +19,9 @@ export class PurchaseComponent implements OnInit{
   constructor(private purchaseService:PurchaseService,public dialog: MatDialog ){ }
 
   getAllPurchases(){
-    this.purchaseService.getPurchases("7e725ce5-82c8-462f-bdaa-8c781d8345e1").subscribe({
+    this.purchaseService.getPurchases(localStorage.getItem('LoggedUserID'),localStorage.getItem("Authorization")).subscribe({
       next: data => {
-        this.ELEMENT_DATA = data;
+        this.ELEMENT_DATA = JSON.parse(data);
         console.log('purchases:');
         console.log(this.ELEMENT_DATA);
 

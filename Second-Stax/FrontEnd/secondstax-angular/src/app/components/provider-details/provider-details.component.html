@@ -1,3 +1,6 @@
+<app-navbar></app-navbar>
+<br><br>
+
 <div class="main-div">
 
     <div class="mat-elevation-z8">
@@ -6,8 +9,8 @@
           <div class="container" >
             <div class="card-custom">
               <div class="card-imgage"> 
-               <img class="card-img rounded-circle" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" alt="Card image cap"> 
-                <h2 class="card-title text-success">User Details</h2>
+               <img class="card-img rounded-circle" src="https://w7.pngwing.com/pngs/699/363/png-transparent-computer-icons-avatar-customer-service-profile-blue-heroes-service.png" alt="Card image cap"> 
+                <h2 style ="font-weight:bolder; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(22, 143, 186);" class="card-title text-success">User Details</h2>
             </div>
               
               </div>
@@ -50,7 +53,7 @@
                 <th mat-header-cell *matHeaderCellDef > Buy </th>
   
                 <td mat-cell *matCellDef="let element">
-                  <button (click)="openDialog()" mat-icon-button>
+                  <button (click)="openDialog(element.productId)" mat-icon-button>
                     <span class="material-icons">shop</span>      
                   </button>
                 </td>

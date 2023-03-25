@@ -7,7 +7,7 @@
       <span (mouseleave)="menuTrigger.closeMenu()">
         <button mat-menu-item>
           <mat-icon>home</mat-icon>
-          <span  mat-button routerLink="purchases">Purchases</span>
+          <span  mat-button routerLink="/purchases">Purchases</span>
     </button>
     <button mat-menu-item>
           <mat-icon>people_outline</mat-icon>
@@ -21,6 +21,6 @@
     </mat-menu>
     </span>
     <span class="fill-remaining-space">Second Stax FX</span>
-    <h4>user.name@gmail.com</h4>
+    <h4>{{username}}</h4>
 
   </mat-toolbar>

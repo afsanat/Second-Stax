@@ -1,6 +1,5 @@
 package SecondStax.example.SecondStax.orders.controller;
 
-import SecondStax.example.SecondStax.FXproduct.model.FXProduct;
 import SecondStax.example.SecondStax.orders.dto.OrderPayLoad;
 import SecondStax.example.SecondStax.orders.model.Order;
 import SecondStax.example.SecondStax.orders.service.OrderService;

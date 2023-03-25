@@ -13,7 +13,7 @@ import { AdminService } from 'src/app/services/admin.service';
 export class AdminComponent implements OnInit{
   ELEMENT_DATA: any;
   dataSource:any;
-  displayedColumns: string[] = ['currency', 'price', 'amount','email','bank','account','status','actions'];
+  displayedColumns: string[] = ['currency', 'price', 'amount','Availamount','email','bank','account','status','actions'];
   defaultLeaderBoard:any;
 
   constructor(private sellService:AdminService,public dialog: MatDialog ){ }
@@ -35,8 +35,9 @@ export class AdminComponent implements OnInit{
   });
   }
 
-  acceptOrder(){
-    this.sellService.approveOrder("fe8b641e-36fd-4919-afef-e997735b29ab").subscribe({
+  acceptOrder(orderId:any){
+    console.log(orderId)
+    this.sellService.approveOrder(orderId).subscribe({
       next: data => {
         this.ELEMENT_DATA = data;
         console.log('approved:');
@@ -49,8 +50,9 @@ export class AdminComponent implements OnInit{
   window.location.reload();
   }
 
-  rejectOrder(){
-    this.sellService.rejectOrder("fe8b641e-36fd-4919-afef-e997735b29ab").subscribe({
+  rejectOrder(orderId:any){
+    console.log(orderId)
+    this.sellService.rejectOrder(orderId).subscribe({
       next: data => {
         this.ELEMENT_DATA = data;
         console.log('rejected:');
